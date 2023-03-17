@@ -1,0 +1,730 @@
+body{
+    color:#506a85;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.color{
+    color:#506a85;
+    font-size: 11px;
+    font-weight: bold;
+  
+}
+.social_icon{
+    margin-right: 20px;
+    font-size: 10px;
+}
+.top_nav{
+    margin-top: 11px;
+}
+.top_header{
+    font-size: 10px;
+   
+}
+
+
+.openheaderprofileicon{
+    cursor: pointer;
+}
+.profileopendiv{
+    left: 32px;
+    top: 40px;
+    height: 102px;
+    z-index: 99999999;
+    bottom: -45px;
+    padding: 5px 0 0 0;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    display: none;
+}
+.profileopendiv ul{
+    padding: 0;
+    margin: 0;
+}
+
+.profileopendiv ul li{
+    padding: 5px 10px 0 10px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.493);
+    cursor: pointer;
+}
+
+.sh{
+    border-bottom:1px solid #e6e9ed;
+}
+.text{
+    margin-bottom: 200px;
+}
+.carousel-indicators{
+    background-color: white;
+    width: 100px;
+    margin:0 auto -10px;
+}
+.carousel-indicators li{
+    height: 10px;
+    width: 10px;
+    background-color: black;
+    border-radius: 50%;
+}
+.active_carousal{
+    background-color:#17a78b!important ;
+}
+.carousel-caption{
+    width: 50%;
+}
+
+
+/* Hero Section  */
+
+
+.herosection{
+min-height: 530px;
+max-height: auto;
+background:url(../images/main_img.png);
+background-size: cover;
+background-repeat: no-repeat;
+padding-top: 40px;
+padding-bottom: 40px;
+}
+.herosection .left{
+    
+    padding: 100px 0 0 40px;
+}
+.herosection .left h1{
+color: white;
+margin-bottom: 30px;
+}
+.herosection .left p{
+    color: white;
+    font-size: 20px;
+}
+.herosection .right{
+    display: flex;
+    justify-content: center;
+    
+}
+.herosection .right .herobox {
+    width: 80%;
+    background-color: white;
+    border-radius: 10px;
+    padding: 45px 70px;
+
+}
+.priceusd p{
+    color: #506A85;
+    font-size:22px ;
+    margin-bottom: 0;
+}
+
+.dollersign{
+    font-size: 22px;
+}
+
+.pricecalculationdiv{
+    border-bottom: 1px solid gray;
+}
+
+.pricecalculationdiv{
+    font-size: 22px;
+}
+/* Hero Section End  */
+.carousel_p{
+    color:#9cabbb;
+}
+.carousel_h{
+    letter-spacing: 3px;
+}
+.overlay{
+    background-color: #09b79c;
+    position: relative;
+    transition: all 1s;
+}
+.overlay:hover{
+    background-color: transparent;
+cursor: pointer;
+}
+.fa-plus{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    font-size: 20px;
+   
+}
+.plus{
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    color: white;
+    font-size: 20px;
+    z-index: 1;
+}
+.star{
+  color:#00bc9c;
+    font-size: 40px;
+}
+.btn{
+    border-radius: 2px;
+    background-color: #17a78b;
+}
+.text_green{
+    color:#17a78b;
+}
+.big_footer{
+    background-color: #2f4052;
+    color:white;
+}
+
+.big_footer .small{
+    font-size: 12px;
+    color:#8c9aa8;
+}
+.inner_input{
+    background-color: #596675;
+    padding: 5px 8px;
+    border-radius: 3px;
+}
+.input{
+    background-color: transparent;
+    border:none;
+   
+}
+.input::placeholder{
+    color:white;
+    font-size: 13px;
+}
+.input_btn{
+    background-color:#17a78b;
+    color: white;
+    font-size: 13px;
+    border: none;
+    border-radius: 3px;
+    padding:7px 0;
+}
+li{
+    list-style: none;
+}
+li a{
+    margin-right: 15px;
+    line-height: 35px;
+    text-decoration:none;
+}
+.su{
+    position:relative;
+}
+.scroll_up{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color:#00bc9c;
+    background-color: #506a85;
+    padding: 10px 15px;
+}
+.scroll_up:hover{
+    cursor: pointer;
+}
+.active,.small.active{
+    color: #00bc9c;
+}
+/* Owl carasoul */
+
+
+
+/* -----------------------Order Page Code----------------------------------------- */
+
+.paperdetailbox {
+    border: 1px solid #506A85;
+    display: inline-block;
+    padding: 5px 18px 5px 15px;
+    text-align: center;
+    border-radius: 0 33px 0;
+    margin: 0 0 -50px -20px
+}
+.paperdetailbox p{
+    margin-bottom: 0;
+}
+
+.academiclevelrow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.academiclevelrow .col label{
+    margin-bottom: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.academicactive{
+    background-color: #506A85;
+    color: white;
+}
+
+.paperdetailformdiv{
+    padding: 20px 50px;
+    border-left: 4px dotted #59667570;
+}
+
+
+
+
+.dragablefilediv{
+    width: 100%;
+    background-color: rgba(255, 192, 203, 0.178);
+    padding: 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+/* Paper Format  */
+
+.paperformatrow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.paperformatrow .col label{
+    margin-bottom: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.paperformatactive{
+    background-color: #506A85;
+    color: white;
+}
+
+
+/* Number Of Pages  */
+
+
+.countingrow .col{
+    border: 1px solid #586e856b;
+    padding: 0;
+     text-align: center;
+     color: black;
+}
+.countingrow .col p{
+    font-size: 17px;
+}
+
+
+/* Single Double  */
+.doublesinglerow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.doublesinglerow .col label{
+    margin-bottom: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.doublesinglerowactive{
+    background-color: #506A85;
+    color: white;
+}
+
+/* Number Pages  */
+
+.countingrowpage{
+    display: flex;
+    color: black;
+}
+
+
+.countingrowpage .myminus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+
+
+.countingrowpage .mycount{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #0f1011c5;
+}
+
+.countingrowpage .myplus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+/* Currency  */
+
+.currencyrow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.currencyrow .col label{
+    margin-bottom: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.currencyactive{
+    background-color: #506A85;
+    color: white;
+}
+
+
+
+/* Sources to be cited */
+
+
+
+
+
+.sourcecountingrowpage{
+    display: flex;
+    color: black;
+}
+
+
+.sourcecountingrowpage .myminus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+
+
+.sourcecountingrowpage .mycount{
+    padding: 5px 38px;
+    font-size: 20px;
+    border: 1px solid #0f1011c5;
+}
+
+.sourcecountingrowpage .myplus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+
+/* Power point slides  */
+
+.powerpointslidecountingrowpage{
+    display: flex;
+    color: black;
+}
+
+
+.powerpointslidecountingrowpage .myminus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+
+
+.powerpointslidecountingrowpage .mycount{
+    padding: 5px 38px;
+    font-size: 20px;
+    border: 1px solid #0f1011c5;
+}
+
+.powerpointslidecountingrowpage .myplus{
+    padding: 5px 18px;
+    font-size: 20px;
+    border: 1px solid #586e856b;
+    cursor: pointer;
+}
+
+
+
+
+/* Deadline  */
+
+
+.deadlinerow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.deadlinerow .col label{
+    margin-bottom: 0;
+    padding: 10px 2px;
+    cursor: pointer;
+    /* font-size: 12px; */
+}
+.deadlinerowactive{
+    background-color: #506A85;
+    color: white;
+}
+
+
+
+/* Standard time div data  */
+
+
+.standardtimedivdata p{
+    font-size: 11px;
+    margin-bottom: 2px;
+}
+
+
+
+/* Package  */
+
+
+
+.categorypackagerow .col{
+    border: 1px solid #586e856b;
+   padding: 0;
+    text-align: center;
+}
+
+.categorypackagerow .col label{
+    margin-bottom: 0;
+    padding: 10px 7px;
+    cursor: pointer;
+    /* font-size: 12px; */
+}
+
+.categorypackagerow .col label hr{
+border-bottom: 1px solid white;
+}
+.categorypackagerowactive{
+    background-color: #506A85;
+    color: white;
+}
+
+
+/* -------------------------------Acount Div-------------------------- */
+
+
+
+.accoutdivpoint{
+    border: 1px solid #506A85;
+    display: inline-block;
+    padding: 5px 18px 5px 15px;
+    text-align: center;
+    border-radius: 0 33px 0;
+    position: absolute;
+    left: -90px;
+    background-color: white;
+}
+
+.accountdivpointmain{
+    height: 100px;
+}
+.acounttabdiv{
+    display: flex;
+}
+.paymentloginbutton{
+  
+    border-radius: 8px;
+    padding: 10px 42px;
+    margin-right: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.paymentloginbutton.active{
+    border: 1px solid #506A85;
+    box-shadow: 2px 1px 3px #506A85;
+}
+
+.paymentloginform{
+    display: none;
+}
+
+.paymentloginform.active{
+    display: block;
+}
+
+
+
+
+/* ----------------------checkout button----------- */
+
+.checkoutbuttonhide .hide{
+    display: none;
+}
+
+/* ---------------------------------------Right Box Fixed-------------------------------- */
+
+.rightboxfixed{
+    position: fixed;
+    right: 50px;
+    top: 160px;
+    width: 350px;
+    min-height: 400px;
+    border-radius: 10px;
+    background-color: #506A85 ;
+    color: white;
+    z-index: 999;
+}
+
+.rightboxfixed.loginuser{
+    position: fixed;
+    right: 0px;
+    top: 160px;
+    width: 300px;
+    min-height: 400px;
+    border-radius: 10px;
+    background-color: #506A85 ;
+    color: white;
+    z-index: 999;
+}
+.rightboxfixed .orderbox{
+    padding: 15px 15px;
+}
+
+.rightboxfixed .orderbox h4{
+    font-size: 18px;
+}
+
+.getacademic{
+    font-size: 15px;
+    color: white;
+    text-transform: capitalize;
+}
+.gettypeofpaper{
+    font-size: 15px;
+    color: white;
+    text-transform: capitalize;
+}
+
+
+.paypalimage{
+
+    height: 17px;
+    background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDIiIGhlaWdodD0iMTYyIiB2aWV3Qm94PSIxLjUgMTA5MS41IDYwMiAxNjIiPjxwYXRoIGZpbGw9IiMwMDJGODYiIGQ9Ik0zMzMuMDg2IDExMzUuNjQ4aC0yMi41MTNjLTIuMTUyIDAtNC4xNjcgMS4wNjgtNS4zNzMgMi44NTRsLTMxLjA1OCA0NS43MzYtMTMuMTYtNDMuOTVjLS44MjUtMi43NS0zLjM1OC00LjY0LTYuMjI4LTQuNjRoLTIyLjEyN2MtMi42NyAwLTQuNTUzIDIuNjMtMy42OSA1LjE1NmwyNC43ODYgNzIuNzY4LTIzLjMxNSAzMi44OTZjLTEuODI3IDIuNTgyLjAyIDYuMTUyIDMuMTg1IDYuMTUyaDIyLjQ4OGMyLjEzIDAgNC4xMjYtMS4wNDMgNS4zNDQtMi43OTNsNzQuODY1LTEwOC4wNmMxLjc5LTIuNTgzLS4wNTYtNi4xMi0zLjIwNC02LjEybS0xNTAuNTA2IDQzLjU5N2MtMi4xNjUgMTIuNzk3LTEyLjMyIDIxLjM5LTI1LjI4IDIxLjM5LTYuNDk1IDAtMTEuNy0yLjA5LTE1LjA0LTYuMDQ4LTMuMzEyLTMuOTItNC41Ni05LjUxLTMuNTEtMTUuNzMgMi4wMTMtMTIuNjg3IDEyLjMzOC0yMS41NTIgMjUuMS0yMS41NTIgNi4zNjIgMCAxMS41MjQgMi4xMSAxNC45MyA2LjEwNCAzLjQzMiA0LjAyMiA0Ljc4MyA5LjY0MyAzLjggMTUuODM2bTMxLjIxNS00My41OTZoLTIyLjM5OGMtMS45MTcgMC0zLjU1MiAxLjM5My0zLjg1NCAzLjI5M2wtLjk4MyA2LjI2LTEuNTYyLTIuMjY3Yy00Ljg1NS03LjAzOC0xNS42NjgtOS4zOTYtMjYuNDYzLTkuMzk2LTI0Ljc0NCAwLTQ1Ljg4IDE4Ljc1Ni00OS45OTUgNDUuMDU3LTIuMTQgMTMuMTIzLjkgMjUuNjYgOC4zNCAzNC40MSA2LjgzNCA4LjA0IDE2LjU4NSAxMS4zODcgMjguMjA3IDExLjM4NyAxOS45NSAwIDMxLjAxLTEyLjgxIDMxLjAxLTEyLjgxbC0xIDYuMjI1Yy0uMzc1IDIuMzYzIDEuNDUzIDQuNTA2IDMuODUzIDQuNTA2aDIwLjE2N2MzLjIwMiAwIDUuOTIyLTIuMzIgNi40MjItNS40OGwxMi4xMS03Ni42NzZjLjM3Mi0yLjM2NS0xLjQ2LTQuNTA2LTMuODU1LTQuNTA2bS0xMzQuNDA4LjU0Yy0yLjU1NyAxNi43OS0xNS4zNzggMTYuNzktMjcuNzg0IDE2Ljc5aC03LjA1Nmw0Ljk1LTMxLjM1Yy4yOTYtMS44OTQgMS45My0zLjI4NiAzLjg0OC0zLjI4NmgzLjI0YzguNDQyIDAgMTYuNDE1IDAgMjAuNTI3IDQuODA3IDIuNDYyIDIuODc1IDMuMjAzIDcuMTQ1IDIuMjc1IDEzLjAzN20tNS4zOTgtNDMuODA4SDI3LjIxNGMtMy4yMDIgMC01LjkyMiAyLjMyNy02LjQyMiA1LjQ4N0wxLjg4IDEyMTcuODA3Yy0uMzc0IDIuMzYzIDEuNDU0IDQuNTA0IDMuODQ4IDQuNTA0aDIyLjMzOGMzLjE5NiAwIDUuOTE2LTIuMzI3IDYuNDE3LTUuNDhsNS4xMDgtMzIuMzZjLjQ5Ni0zLjE2IDMuMjIyLTUuNDg4IDYuNDE4LTUuNDg4aDE0LjhjMzAuODEgMCA0OC41OTQtMTQuOTA4IDUzLjIzOC00NC40NjUgMi4wOTMtMTIuOTE4LjA4NC0yMy4wNzMtNS45NjQtMzAuMTg0LTYuNjUzLTcuODE3LTE4LjQ0My0xMS45NTQtMzQuMDkzLTExLjk1NCIvPjxwYXRoIGZpbGw9IiMwMDlDREUiIGQ9Ik01NzMuODEgMTA5NS42NzZsLTE5LjE5NCAxMjIuMTMzYy0uMzc0IDIuMzY0IDEuNDUzIDQuNTA1IDMuODQ4IDQuNTA1aDE5LjMxYzMuMTk3IDAgNS45MjMtMi4zMjggNi40MTctNS40ODhsMTguOTMyLTExOS45NGMuMzc0LTIuMzYyLTEuNDUzLTQuNTAzLTMuODU0LTQuNTAzaC0yMS42MDJjLTEuOTI1IDAtMy41NiAxLjM5LTMuODU1IDMuMjkybS01Ny42MTMgODMuNTY4Yy0yLjE2NSAxMi43OTctMTIuMzIgMjEuMzktMjUuMjggMjEuMzktNi40OTYgMC0xMS43LTIuMDktMTUuMDQtNi4wNDgtMy4zMTctMy45Mi00LjU2LTkuNTEtMy41MS0xNS43MyAyLjAxMy0xMi42ODcgMTIuMzM4LTIxLjU1MiAyNS4xLTIxLjU1MiA2LjM2IDAgMTEuNTIzIDIuMTEgMTQuOTMgNi4xMDQgMy40MzIgNC4wMjIgNC43ODQgOS42NDMgMy44IDE1LjgzNm0zMS4yMTUtNDMuNTk2aC0yMi4zOTdjLTEuOTE4IDAtMy41NTMgMS4zOTMtMy44NTQgMy4yOTNsLS45OCA2LjI2LTEuNTctMi4yNjdjLTQuODQ4LTcuMDM4LTE1LjY2LTkuMzk2LTI2LjQ1NS05LjM5Ni0yNC43NDQgMC00NS44ODIgMTguNzU2LTQ5Ljk5NSA0NS4wNTctMi4xNCAxMy4xMjMuODk4IDI1LjY2IDguMzQgMzQuNDEgNi44MzMgOC4wNCAxNi41ODUgMTEuMzg3IDI4LjIwNiAxMS4zODcgMTkuOTUgMCAzMS4wMS0xMi44MSAzMS4wMS0xMi44MWwtMSA2LjIyNWMtLjM3NSAyLjM2MyAxLjQ1MyA0LjUwNiAzLjg1MyA0LjUwNmgyMC4xNjVjMy4yMDIgMCA1LjkyMi0yLjMyIDYuNDIzLTUuNDhsMTIuMTEtNzYuNjc2Yy4zNzItMi4zNjUtMS40Ni00LjUwNi0zLjg1Ni00LjUwNm0tMTM0LjQxLjU0Yy0yLjU1NiAxNi43OS0xNS4zNzcgMTYuNzktMjcuNzgyIDE2Ljc5aC03LjA1Nmw0Ljk1LTMxLjM1Yy4yOTctMS44OTQgMS45My0zLjI4NiAzLjg1LTMuMjg2aDMuMjM3YzguNDQ0IDAgMTYuNDE3IDAgMjAuNTMgNC44MDcgMi40NiAyLjg3NSAzLjIwMyA3LjE0NSAyLjI3MyAxMy4wMzdtLTUuMzk3LTQzLjgwOGgtNDYuNzc0Yy0zLjIwMiAwLTUuOTIyIDIuMzI3LTYuNDIzIDUuNDg3bC0xOC45MTMgMTE5Ljk0Yy0uMzc0IDIuMzYyIDEuNDYgNC41MDMgMy44NDggNC41MDNoMjQuMDAyYzIuMjM3IDAgNC4xNDQtMS42MyA0LjQ5My0zLjgzNmw1LjM2Ny0zNC4wMDZjLjQ5NC0zLjE2IDMuMjItNS40ODggNi40MTctNS40ODhoMTQuOGMzMC44MSAwIDQ4LjU5NS0xNC45MDggNTMuMjM4LTQ0LjQ2NSAyLjA5My0xMi45MTguMDg0LTIzLjA3My01Ljk2NS0zMC4xODQtNi42NS03LjgxNC0xOC40NC0xMS45NS0zNC4wOS0xMS45NSIvPjwvc3ZnPg==) center left/contain no-repeat;
+    display: inline-block;
+    padding: 20px 10px;
+    width: 100%;
+}
+
+.pptdiv.hide{
+    display: none;
+}
+
+
+
+/* -------------------------------------Login Form Code----------------------------------------------------- */
+
+
+
+
+.loginformdiv{
+    background-color: #506A85;
+    height: 100vh;
+    color: white;
+}
+.loginformdiv .loginbox{
+    width: 70%;
+}
+
+
+
+/* User Dashboard---------------------------------------------------------------------- */
+
+
+
+
+.dashboardsidebar{
+    background-color: rgb(41, 38, 38);
+    color: white;
+    padding-top: 10px;
+    height: 100vh;
+}
+.dashboardsidebar ul {
+    padding-left: 0;
+}
+.dashboardsidebar ul li.active {
+    background-color: #00bc9c;
+    color: black;
+}
+.dashboardsidebar ul li {
+    border-bottom: 1px solid rgba(230, 224, 224, 0.466);
+    padding: 10px 0 10px 10px;
+    cursor: pointer;
+}
+
+.dashboardcontent{
+}
+
+.dashboarddiv{
+    display: none;
+}
+
+.dashboarddiv.active{
+    display: block;
+}
+
+
+.messageboxdiv{
+    width: 100%;
+    min-height: 500px;
+    overflow-x: hidden;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 5px 10px;
+}
+
+.singlechatcol{
+    padding: 10px 24px;
+    background-color: #09b79c;
+    border-radius: 0 10px 5px 0;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+    
+}
+
+.singlechatcol.sendercol{
+    margin-left: auto;
+    border-radius: 0 0 10px 0!important;
+}
+.chatrowmain{
+
+
+
+
+}
+/* -----------------------------------Responsive Code Start----------------------------------- */
+
+
+
+@media all and (max-width: 370px) {
+  
+.navbar-toggler{
+    font-size: 18px;
+    border: none;
+    font-family: sans-serif;
+}
+.color{
+    font-size: 15px;
+    
+}
+.fa-search{
+    font-size: 22px;
+}
+.heading{
+    font-size:25px;
+}
+
+}
+
+
