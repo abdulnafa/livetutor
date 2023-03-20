@@ -1,109 +1,7 @@
-<!doctype html>
-<html lang="en">
+@extends('layouts.main')
+@section('title',"User Account")
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-
-
-    <title>Live Tutors</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{asset('assets/css/file.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/owl.theme.green.css')}}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://kit.fontawesome.com/21d8fb0b75.js" crossorigin="anonymous"></script>
-    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
-    <script src="{{asset('assets/js/owl.carousel.js')}}"></script>
-</head>
-
-<body>
-
-
-    <!-- Small Header -->
-
-
-    <div class="container-fluid">
-        <div class="row bg-light sh">
-            <div class="col-lg-9 mx-auto">
-                <div class="row top_header">
-                    <div class="col-lg-6 py-2 d-flex justify-content-lg-start justify-content-center">
-                        <i class="far fa-envelope mr-2"></i>
-                        <span>info@reen.com</span>
-                        <i class="fas fa-mobile-alt ml-5 mr-2"></i>
-                        <span>+00 (123) 4567890</span>
-                    </div>
-                    <div class="col-lg-6 d-flex justify-content-lg-end justify-content-center py-2 ">
-
-                        <i class="fab fa-facebook-f social_icon"></i>
-                        <i class="fab fa-google-plus-g social_icon"></i>
-                        <i class="fab fa-twitter social_icon"></i>
-                        <i class="fab fa-pinterest-p social_icon"></i>
-                        <i class="fab fa-behance social_icon"></i>
-                        <i class="fas fa-atom social_icon"></i>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Header -->
-
-    <div class="container-fluid">
-        <div class="row bg-white">
-            <div class="col-lg-9 mx-auto py-3">
-
-                <nav class="navbar navbar-expand-lg navbar-light p-0 pr-4">
-                    <a class="navbar-brand px-0" href="#">
-
-                        <img src="{{asset('assets/images/hlogo.png')}}" alt="">
-                    </a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse top_nav" id="navbarNav">
-
-                        <i class="fas fa-search ml-auto"></i>
-
-
-
-
-                        @if(session()->has('loginuserid'))
-
-                        <div class="px-5 position-relative">
-                            <i class="fa-solid fa-user openheaderprofileicon"></i>
-                            <div class="profileopendiv position-absolute">
-                                <ul>
-                                    <li>
-                                        <a href="{{Route('userAdmin')}}">Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{Route('logout')}}">Logout</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        @endif
-
-
-                    </div>
-                </nav>
-
-
-
-            </div>
-        </div>
-    </div>
+@section('my-content')
 
 
     <div class="container-fluid">
@@ -112,40 +10,183 @@
 
 
             <!-- Dashboard Sidebar ------------------------------------------------------------------------  -->
-            <div class="col-md-3 dashboardsidebar">
-                <ul>
-                    <li class="active" id="placeorderbtn">
-                        <a> <i class="fa-regular fa-credit-card mr-2"></i> Place New Order</a>
-                    </li>
-
-                    <li id="myordersbtn">
-                        <a><i class="fa-solid fa-cart-shopping mr-2"></i>My Orders</a>
-                    </li>
-
-                    <li id="editprofilesbtn">
-                        <a><i class="fa-solid fa-user-pen mr-2"></i> Edit Profile</a>
-                    </li>
-                    <li id="messagebtn">
-                        <a><i class="fa-solid fa-user-pen mr-2"></i> Messages</a>
-                    </li>
-                </ul>
-            </div>
+            @include('inc.userdashboardsidebar')
             <!-- Dashboard Content  -->
 
 
             <div class="col-md-9 dashboardcontent">
+<script src="{{ asset('assets/js/paymob.js') }}"></script>
+<button onclick="firstStep()">Pay</button>
+<div class="dashboarddiv home-section active">
+    <div class="row mb-4">
+        <div class="col-3 home-card">
+            <div class="row">
+                <div class="col">
+                     <div class="content text-center">
+                        <h3 class="">{{ $pennum }}</h3>
+                        <span >Pending Order</span>
+                     </div>
+                </div>
+                <div class="col">
+               <div class="round-div" style="    background-color: #E984B1 !important;"> <i class="bi bi-stopwatch"></i></div>
+                </div>
+            </div>
+        </div>  
+        
+        <div class="col-3 home-card">
+            <div class="row">
+                <div class="col">
+                     <div class="content text-center">
+                        <h3 class="">{{ $revnum }}</h3>
+                         <span>Revsion Order</span>
+                     </div>
+                </div>
+                <div class="col">
+                <div class="round-div " style="background-color: #59ADEC !important;"><i class="bi bi-receipt"></i></div>
+                   
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-3 home-card">
+            <div class="row">
+                <div class="col">
+                     <div class="content">
+                        <h3 class="text-center">{{ $comnum }}</h3>
+                         <span>Complete Order</span>
+                     </div>
+                </div>
+                <div class="col">
+                 <div class="round-div"  style="background-color: #E7C353 !important;"><i class="bi bi-bag"></i> </div>
+                </div>
+            </div>
+        </div>
+       
+        
+    </div>
+
+<h6 class=" my-3">Pending Payments</h6>
+<table class="table mb-4 ">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Type of Paper</th>
+            <th>Amount</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach ($pen as $pen)
+            
+       
+        <tr>
+            <td>#{{ $pen->id }}</td>
+            <td>{{ $pen->topic }}</td>
+            <td>{{ $pen->type_of_paper }}</td>
+            <td>${{ $pen->amount }}</td>
+        </tr>
+         @endforeach
+    </tbody>
+</table>
+
+<h6 class="mt-5">Assigned Orders Activity</h6>
+<li class="hr"></li>
+<div class="row status-btns">
+    <div class="col">
+        <button  class="in-btn active">IN PROGRESS ({{ $inpronum }})</button>
+                <button class="rv-btn ">REVISION ({{ $revnum }})</button>
+                
+              
+                
+               
+                <button class="com-btn">COMPLETED ({{ $comnum }})</button>       
+
+    </div>
+</div>
+<table class="table in-progress-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Type of Paper</th>
+            <th>Academic Level</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+
+        @foreach ($inpro as $inpro)  
+        <tr>
+            <td>#{{$inpro->id  }}</td>
+            <td>{{ $inpro->topic }}</td>
+            <td>{{ $inpro->type_of_paper }}</td>
+            <td>{{ $inpro->academic_level }}</td>
+        </tr> 
+         @endforeach
 
 
+    </tbody>
+</table>
+
+<table class="table revision-table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Type of Paper</th>
+            <th>Academic Level</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach ($rev as $rev )
+            
+       
+        <tr>
+             <td>#{{$rev->id  }}</td>
+            <td>{{ $rev->topic }}</td>
+            <td>{{ $rev->type_of_paper }}</td>
+            <td>{{ $rev->academic_level }}</td>
+        </tr>
+         @endforeach
+    </tbody>
+</table>
+
+<table class="table complete-table">
+    <thead>
+        <tr>
+            <th>#ID</th>
+            <th>Title</th>
+            <th>Type of Paper</th>
+            <th>Academic Level</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @foreach ($com as $com )
+            
+     
+        <tr>
+             <td>#{{$com->id  }}</td>
+            <td>{{ $com->topic }}</td>
+            <td>{{ $com->type_of_paper }}</td>
+            <td>{{ $com->academic_level }}</td>
+        </tr>
+           @endforeach
+    </tbody>
+</table>
+</div>
                 <!-- ------  Place And Order Code-----------------------------------------------------  -->
-                <div class="dashboarddiv container-fluid placeorderdiv active">
+                <div class="dashboarddiv container-fluid placeorderdiv ">
 
 
                     <div class="container-fluid py-5">
 
 
 
-
-                        <div class="container">
+<div class="dashboarddiv  order-pay-section"></div>
+                        <div class="container order-custom">
 
 
                             <div class="row position-relative">
@@ -167,35 +208,34 @@
                                             enctype="multipart/form-data">
                                             @csrf
                                             <!-- Academic level  -->
-                                            <div class="row  py-3">
-                                                <div class="col-3">
-                                                    <label class="mb-0">Academic level</label>
-                                                </div>
-                                                <div class="col">
-                                                    <div class="row academiclevelrow">
-                                                        <div class="col academicactive">
-                                                            <label for="college">College</label>
-                                                            <input type="radio" id="college" value="50.38"
-                                                                class="d-none" name="academic" checked />
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="undergraduate">Undergraduate</label>
-                                                            <input type="radio" id="undergraduate" value="52.47"
-                                                                class="d-none" name="academic" />
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="master">Masters</label>
-                                                            <input type="radio" id="master" value="62.97" class="d-none"
-                                                                name="academic" />
-                                                        </div>
-                                                        <div class="col">
-                                                            <label for="phd">PHD</label>
-                                                            <input type="radio" id="phd" value="67.17" class="d-none"
-                                                                name="academic" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+<div class="row  py-3">
+                                <div class="col-3">
+                                    <label class="mb-0">Academic level</label>
+                                </div>
+                                <div class="col">
+                                    <div class="row academiclevelrow">
+                                        <div class="col academicactive">
+                                            <label for="college">College</label>
+                                            <input type="radio" id="college" data-val="50.38" value="collage" class="d-none"
+                                                name="academic" checked />
+                                        </div>
+                                        <div class="col">
+                                            <label for="undergraduate">Undergraduate</label>
+                                            <input type="radio" id="undergraduate" data-val="52.47" value="undergraduate" class="d-none"
+                                                name="academic" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="master">Masters</label>
+                                            <input type="radio" id="master" data-val="62.97" value="master" class="d-none"
+                                                name="academic" />
+                                        </div>
+                                        <div class="col">
+                                            <label for="phd">PHD</label>
+                                            <input type="radio" id="phd" data-val="67.17" value="phd" class="d-none" name="academic" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
 
 
@@ -207,9 +247,9 @@
                                                 </div>
                                                 <div class="col px-0">
                                                     <select name="typeofpaper" id="typeofpaper" class="form-control">
-                                                        <option value="eassyanytype" selected>Eassy (Any Type)</option>
-                                                        <option value="articleanytype">Article (Any Type)</option>
-                                                        <option value="contentanytype">Content (Any Type)</option>
+                                                        <option value="eassy" selected>Eassy (Any Type)</option>
+                                                        <option value="article">Article (Any Type)</option>
+                                                        <option value="content">Content (Any Type)</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -669,11 +709,11 @@
                         <div class="rightboxfixed loginuser">
                             <div class="orderbox">
                                 <h4>Writer's Choice</h4>
-                                <div class="getacademic mb-1">
+                                <div style="color:#536C86" class="getacademic mb-1">
                                     College
                                 </div>
 
-                                <div class="gettypeofpaper">
+                                <div style="color:#536C86" class="gettypeofpaper">
                                     Dissertation chapter
                                 </div>
 
@@ -726,7 +766,7 @@
 
                                 <hr />
 
-                                <p>Secure payments via:</p>
+                                
 
                                 <div class=" paypalimage">
 
@@ -734,10 +774,10 @@
 
                                 <div class="row couponcodediv py-3">
                                     <div class="col-8">
-                                        <input type="text" class="form-control" />
+                                        
                                     </div>
                                     <div class="col">
-                                        <button class="btn btn-success">Apply</button>
+                                     
                                     </div>
 
                                 </div>
@@ -781,8 +821,8 @@
                                 @if($orderdetail)
                                 @foreach($orderdetail as $data)
                                 <tr>
-                                    <td>{{$data->id}}</td>
-                                    <td>{{$data->topic}}</td>
+                                 <td> <a style="cursor: pointer ;color:#00BC9C;" href="{{ url('order-detail') }}/{{$data->id}}">#{{$data->id}}</a> </td>
+                                    <td><a style="cursor: pointer ;color:#00BC9C;" href="{{ url('order-detail') }}/{{$data->id}}">{{$data->topic}}</a></td>
                                     <td>{{$data->type_of_paper}}</td>
                                     <td>{{$data->number_of_pages}} Pages</td>
                                     <td>
@@ -902,24 +942,4 @@
 
 
 
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
-    </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="{{asset('assets/js/file.js')}}"></script>
-</body>
-
-</html>
+@endsection

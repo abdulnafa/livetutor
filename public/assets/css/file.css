@@ -26,18 +26,56 @@ html{
 
 .openheaderprofileicon{
     cursor: pointer;
+    padding: 20px;
+   
 }
+
+.dashboard-btn{
+    padding: 10px 25px;
+    color: #fff;
+    background-color: #00bc9c;
+    border-radius: 12px;
+}.dashboard-btn a{
+   
+    color: #fff;
+   
+}
+
 .profileopendiv{
+    border-radius: 10px;
+    padding: 30px;
     left: 32px;
-    top: 40px;
-    height: 102px;
+    color: #000;
+    border: 1px solid #c0c0c0;
+    top: 50px;
+    height: auto;
     z-index: 99999999;
-    bottom: -45px;
-    padding: 5px 0 0 0;
+    /* bottom: -45px; */
+    /* padding: 5px 0 0 0; */
+
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     display: none;
 }
+.profileopendiv a{
+    color: #595555;
+}
+.logout-btn{
+    color: #650303;
+    font-weight: 600;
+}
+
+.theme-btn{
+    color:#000;
+    background-color:#00bc9c;
+    padding:12px 25px;
+    border:none;
+    border-radius:20px
+}.theme-btn a{
+    color:#fff;
+
+}
+
 .profileopendiv ul{
     padding: 0;
     margin: 0;
@@ -264,7 +302,18 @@ li a{
     padding: 20px 50px;
     border-left: 4px dotted #59667570;
 }
-
+.detail-paynow-btn{
+    border: transparent;
+    padding: 8px 50px;
+    background-color: #00bc9c;
+    color: #fff;
+}
+.detail-paynow-btn:hover{
+    border: transparent;
+    padding: 8px 50px;
+    background-color: #02793d;
+    color: #fff;
+}
 
 
 
@@ -567,14 +616,17 @@ border-bottom: 1px solid white;
 
 .rightboxfixed{
     position: fixed;
-    right: 50px;
-    top: 160px;
-    width: 350px;
-    min-height: 400px;
-    border-radius: 10px;
-    background-color: #506A85 ;
-    color: white;
-    z-index: 999;
+        right: 50px;
+        top: 160px;
+        width: 350px;
+        min-height: 360px;
+        border-radius: 10px;
+        background: transparent;
+        /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+        border: 1px solid rgb(0 0 100 / 10%);
+        /* background-color: #506A85 ; */
+        color: white;
+        z-index: 999;
 }
 
 .rightboxfixed.loginuser{
@@ -582,7 +634,7 @@ border-bottom: 1px solid white;
     right: 0px;
     top: 160px;
     width: 300px;
-    min-height: 400px;
+    min-height: 350px;
     border-radius: 10px;
     background-color: #506A85 ;
     color: white;
@@ -621,6 +673,13 @@ border-bottom: 1px solid white;
     display: none;
 }
 
+.btn-profile{
+    padding: 10px 25px;
+    color:white;
+    background-color: #00bc9c;
+    border:none;
+    border-radius: 5px;
+}
 
 
 /* -------------------------------------Login Form Code----------------------------------------------------- */
@@ -645,17 +704,21 @@ border-bottom: 1px solid white;
 
 
 .dashboardsidebar{
-    background-color: rgb(41, 38, 38);
-    color: white;
+    /* background-color: rgb(41, 38, 38); */
+    
+    color: #525e8a;
+        font-size: 15px;
     padding-top: 10px;
     height: 100vh;
+    border-right: 1px solid #f0efef;
 }
 .dashboardsidebar ul {
     padding-left: 0;
 }
 .dashboardsidebar ul li.active {
-    background-color: #00bc9c;
-    color: black;
+  background-color: #8FBD56;
+
+    color: #fff;
 }
 .dashboardsidebar ul li {
     border-bottom: 1px solid rgba(230, 224, 224, 0.466);
@@ -703,6 +766,154 @@ border-bottom: 1px solid white;
 
 
 }
+
+
+/* Paypal box Div(Hammad) */
+.rightboxfixed .orderbox {
+    background-color: #E0EEFF;
+    border-radius: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    color: #4A6675;
+
+}
+.order-dtable td:nth-child(odd) {
+    background-color: #f2f2f2;
+    text-align: right;
+}
+
+.order-detailbtn{
+
+    padding: 5px 20px;
+   
+    color: #596675;
+    border: 1px solid #cbcbcb;
+    border-radius: 10px;
+    font-weight: 500;
+}
+.order-info-btn .active{
+    
+        border-radius: 10px;
+    padding: 6px 20px;
+        background-color:#596675;
+        border: 1px solid #cbcbcb;
+        color:  #fff;
+        font-weight: 500;
+}
+.status-btns button{
+        margin: 5px;
+        border-radius: 2px;
+            padding: 6px 20px;
+           color: #596675;
+            border: 1px solid #596675;
+           
+            font-weight: 500;
+}
+.status-btns .active{
+    margin: 5px;
+        border-radius: 2px;
+            padding: 6px 20px;
+            background-color: #596675 !important;
+            border: 1px solid #cbcbcb !important;
+            color: #fff !important;
+            font-weight: 500;
+}
+
+.user-recent-chat{
+    padding: 3px 10px;
+    background-color: #fff;
+    color: #000;
+ position: relative;
+    border-radius: 10px;
+    border: 1px solid #b5b3b3;
+}
+.user-recent-chat:after {
+    content: '';
+    position: absolute;
+    top:100%;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 0;
+    height: 0;
+    border-top: 15px solid #c4c0c2;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+.edit-order-btn{
+    border: transparent;
+    background-color: #DC3545;
+    color: white;
+    padding: 4px 15px;
+    border-radius: 100px;
+}
+.img-upload-section{
+ 
+    display: none;
+    max-width: 500px;
+
+    justify-content: center;
+}
+.select-img{
+    cursor: pointer; 
+    color: #000;
+    text-align: center;
+    padding: 15px 30px;
+    border: 3px dotted #00bc9c;
+}
+.btn-cool-blues {
+    background: #2193b0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #6dd5ed, #2193b0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #fff;
+    border: 3px solid #eee;
+}
+.home-section .home-card{
+    -webkit-box-flex: 0;
+        background: #F5F5F1;
+        border: solid 1px #EAEDF1;
+        flex: 1;
+        padding: 1.5rem;
+        border-radius: 3px;
+        margin: 1em;
+}
+.home-section .home-card .content span{
+    font-size: 12px;
+    color: rgb(0, 0, 0);
+}
+.home-section .home-card .round-div{
+  color:white;
+ 
+   width: 50px;
+   height: 50px;
+   text-align: center;
+   margin: auto;
+   padding: 0rem;
+   border-radius: 100%;
+}
+.home-section .home-card .round-div i{
+font-size: 26px !important;
+
+}.home-section h6{
+font-size: 20px;
+    color: #495058;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+
+}
+.home-section table th{
+font-size: 16px;
+    color: #495058;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+
+}
+ .revision-table ,.complete-table{
+    display: none;
+}
+
 /* -----------------------------------Responsive Code Start----------------------------------- */
 
 

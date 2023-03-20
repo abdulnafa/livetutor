@@ -7,7 +7,9 @@
         <div class="container-fluid herosection">
 
             <div class="row">
+                
                 <div class="col-md-6 d-md-block d-none left">
+                    
                     <h1>Get Assignment Help From A Professional Essay Writer</h1>
                     <p>Have a native essay writer do your task from scratch for a student-friendly price of just $10 per
                         page. Free edits and originality reports.</p>
@@ -102,9 +104,10 @@
 
                         <!-- Button  -->
 
-                        <div class="row py-3">
-                            <a href="{{route('buynow')}}"><button class="btn btn-primary btn-lg mx-auto"> Order
-                                    Now</button></a>
+                        <div class="col-md-12 py-3 btn" style="border-radius:10px">
+                          
+                            <a style="color:#fff ;font-size:20px" href="{{route('buynow')}}"> Order
+                                    Now</a>
                         </div>
 
 

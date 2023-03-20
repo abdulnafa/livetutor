@@ -12,6 +12,8 @@
 
 
     <title>Live Tutors</title>
+    <!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="{{asset('assets/css/file.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/owl.carousel.css')}}">
@@ -62,7 +64,7 @@
                 <div class="col-lg-9 mx-auto py-3">
 
                     <nav class="navbar navbar-expand-lg navbar-light p-0 pr-4">
-                        <a class="navbar-brand px-0" href="#">
+                        <a class="navbar-brand px-0" href="{{  url('/')  }}">
 
                             <img src="{{asset('assets/images/hlogo.png')}}" alt="">
                         </a>
@@ -73,7 +75,7 @@
                         <div class="collapse navbar-collapse top_nav" id="navbarNav">
                             <ul class="navbar-nav">
                                 <li class="nav-item  mr-3 ml-lg-5">
-                                    <a class=" color" href="#home">HOME <span class="sr-only">(current)</span></a>
+                                    <a class=" color" href="{{ url('/') }}">HOME <span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item mr-3">
                                     <a class=" color" href="#portfolio">PORTFOLIO</a>
@@ -94,13 +96,17 @@
                                     <a class=" color" href="#contact" tabindex="-1" aria-disabled="true">CONTACT</a>
                                 </li>
                             </ul>
-                            <i class="fas fa-search ml-auto"></i>
+                            {{-- <i class="fas fa-search ml-auto"></i> --}}
 
-                            @if(session()->has('loginuserid'))
+                            @if(Auth::check())
 
 
-
-                            <div class="px-5 position-relative">
+ <div class="px-2 ml-auto position-relative">
+    <div class="dashboard-btn">
+            <a href="{{Route('userAdmin')}}"><i class="bi bi-person-circle"></i> Account</a>
+    </div>
+ </div>
+                            {{-- <div class="pl-5 position-relative">
                                 <i class="fa-solid fa-user openheaderprofileicon"></i>
                                 <div class="profileopendiv position-absolute">
                                     <ul>
@@ -108,20 +114,40 @@
                                             <a href="{{Route('userAdmin')}}">Profile</a>
                                         </li>
                                         <li>
-                                            <a href="{{Route('logout')}}">Logout</a>
+                                            <a class="" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+
                                         </li>
                                     </ul>
                                 </div>
-                            </div>
+                            </div> --}}
 
+                            <div class="logout-btn"> <a class="" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
 
-                            @else
-
-                            <div class="px-5">
-                                <a href="{{Route('userlogin')}}">Login</a>
-                            </div>
-
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form></div>
                             @endif
+
+
+                          
+@guest
+                            <div class="px-5">
+                             <button class="theme-btn"> <a href="{{url('signin')}}">Login / Signup</a></button>  
+                            </div>
+
+                   @endguest        
 
 
 

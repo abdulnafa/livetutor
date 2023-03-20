@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\OrderDetail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class OrderPaypal extends Controller
 {
@@ -35,7 +36,7 @@ class OrderPaypal extends Controller
         $tbl->powerpoint_slides=$request['powerpointslides'];
         $tbl->deadline=$request['deadline'];
         $tbl->category_package=$request['package'];
-       $tbl->userid=$request->session()->get("loginuserid");
+       $tbl->userid=Auth::id();
        $tbl->amount=$request['totalamount'];
 
 

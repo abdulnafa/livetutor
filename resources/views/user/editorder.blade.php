@@ -1,5 +1,5 @@
 @extends('layouts.main')
-@section('title',"Buy Now")
+@section('title',"Edit Order")
 
 @section('my-content')
 
@@ -10,8 +10,14 @@
     <div class="container-fluid py-5">
 
 
-
-
+<div class="row">
+    {{-- @include('inc.userdashboardsidebar') --}}
+    @foreach ($order as $order )
+        
+  
+    <div class="col-md-9">
+      <a href="{{ url('userAdmin') }}"><button class="btn btn-success"> << <i class="bi bi-rewind"></i> Go Back</button></a>   
+        <div class="alert alert-warning">EDIT ORDER #{{ $order->id }} --- PRICE: ${{ $order->amount }}</div>
         <div class="container">
 
 
@@ -20,8 +26,8 @@
 
 
                 <div class="col-md-9">
-                    <h3>PLACE AN ORDER</h3>
-                    <p>It’s fast, secure, and confidential &#8712;</p>
+                    <h3>EDIT ORDER</h3>
+                    <p>customize your requirements </p>
 
                     <div class="paperdetailbox my-2">
                         <p>1. Paper details</p>
@@ -30,8 +36,9 @@
                     <div class="paperdetailformdiv">
 
 
-                        <form action="{{Route('orderpaypal')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{url('editorder')}}" method="post" enctype="multipart/form-data">
                             @csrf
+                            <input type="hidden" name="orderid" value="{{ $order->id }}">
                             <!-- Academic level  -->
                             <div class="row  py-3">
                                 <div class="col-3">
@@ -39,22 +46,22 @@
                                 </div>
                                 <div class="col">
                                     <div class="row academiclevelrow">
-                                        <div class="col academicactive">
+                                        <div class="col @if($order->academic_level=='collage') academicactive @endif ">
                                             <label for="college">College</label>
                                             <input type="radio" id="college" data-val="50.38" value="collage" class="d-none"
                                                 name="academic" checked />
                                         </div>
-                                        <div class="col">
+                                        <div class="col @if($order->academic_level=='undergraduate') academicactive @endif " >
                                             <label for="undergraduate">Undergraduate</label>
                                             <input type="radio" id="undergraduate" data-val="52.47" value="undergraduate" class="d-none"
                                                 name="academic" />
                                         </div>
-                                        <div class="col">
+                                        <div class="col @if($order->academic_level=='master') academicactive @endif ">
                                             <label for="master">Masters</label>
                                             <input type="radio" id="master" data-val="62.97" value="master" class="d-none"
                                                 name="academic" />
                                         </div>
-                                        <div class="col">
+                                        <div class="col @if($order->academic_level=='phd') academicactive @endif ">
                                             <label for="phd">PHD</label>
                                             <input type="radio" id="phd" data-val="67.17" value="phd" class="d-none" name="academic" />
                                         </div>
@@ -88,8 +95,8 @@
                                 <div class="col px-0">
                                     <select name="disciplien" class="form-control">
                                         <option value="">Select Subject</option>
-                                        <option value="subject1">Subject 1</option>
-                                        <option value="subject2">Subject 2</option>
+                                        <option @if($order->discipline=="subject1") selected @endif value="subject1">Subject 1</option>
+                                        <option @if($order->discipline=="subject2") selected @endif value="subject2">Subject 2</option>
 
                                     </select>
                                 </div>
@@ -102,7 +109,7 @@
                                 </div>
                                 <div class="col px-0">
                                     <input type="text" name="topic" class="form-control"
-                                        placeholder="Enter Title Of Your Paper" required />
+                                        placeholder="Enter Title Of Your Paper" required  value="{{ $order->topic }}"/>
                                 </div>
                             </div>
 
@@ -112,13 +119,13 @@
 
                             <div class="row py-4">
                                 <div class="col-3">
-                                    <label>Paper Instruction </label>
+                                    <label>Paper Instruction</label>
                                 </div>
                                 <div class="col px-0">
                                     <textarea
                                         placeholder="Write anything you feel is important for the writer to consider. An outline, a grading scale, and other documents may be uploaded as additional materials."
                                         class="form-control" name="paperintstruction" rows="5" required>
-                                   </textarea>
+                                     {{ $order->paper_instruction }}</textarea>
                                 </div>
                             </div>
 
@@ -149,26 +156,26 @@
                                 </div>
                                 <div class="col">
                                     <div class="row paperformatrow">
-                                        <div class="col paperformatactive">
+                                        <div class="col @if($order->paper_format=="apa") paperformatactive @endif paperformatactive">
                                             <label for="apa">APA</label>
                                             <input type="radio" id="apa" value="apa" class="d-none" name="format"
                                                 checked />
                                         </div>
-                                        <div class="col">
+                                        <div class="col  @if($order->paper_format=="chicago") paperformatactive @endif">
                                             <label for="chicago">Chicago/Turabian</label>
                                             <input type="radio" id="chicago" value="chicago" class="d-none"
                                                 name="format" />
                                         </div>
-                                        <div class="col">
+                                        <div class="col  @if($order->paper_format=="mla") paperformatactive @endif">
                                             <label for="mla">MLA</label>
                                             <input type="radio" id="mla" value="mla" class="d-none" name="format" />
                                         </div>
-                                        <div class="col">
+                                        <div class="col  @if($order->paper_format=="havard") paperformatactive @endif">
                                             <label for="havard">Havard</label>
                                             <input type="radio" id="havard" value="havard" class="d-none"
                                                 name="format" />
                                         </div>
-                                        <div class="col">
+                                        <div class="col  @if($order->paper_format=="notapplicable") paperformatactive @endif">
                                             <label for="notapplicable">NotApplicable</label>
                                             <input type="radio" id="notapplicable" value="notapplicable" class="d-none"
                                                 name="format" />
@@ -191,23 +198,23 @@
                                     <div class="row">
                                         <div class="col px-5">
                                             <div class="row countingrowpage">
-                                                <div class="col myminus">-</div>
-                                                <div class="col mycount">1</div>
-                                                <div class="col myplus">+</div>
+                                                <div class="myminus">-</div>
+                                                <div class="mycount">{{ $order->number_of_pages }}</div>
+                                                <div class="myplus">+</div>
                                             </div>
 
 
                                         </div>
                                         <div class="col px-5">
                                             <div class="row doublesinglerow">
-                                                <div class="col doublesinglerowactive">
+                                                <div class="col @if($order->number_of_pages=="1") doublesinglerowactive @endif">
                                                     <label for="double">Double</label>
                                                     <input type="radio" id="double" class="d-none" value="1"
                                                         name="doublesingle" checked />
                                                 </div>
 
 
-                                                <div class="col">
+                                                <div class="col @if($order->number_of_pages=="2") doublesinglerowactive @endif">
                                                     <label for="single">Single</label>
                                                     <input type="radio" value="2" id="single" class="d-none"
                                                         name="doublesingle" />
@@ -278,7 +285,7 @@
 
                                     <div class="sourcecountingrowpage">
                                         <div class="myminus">-</div>
-                                        <div class="mycount">1</div>
+                                        <div class="mycount">{{ $order->sources_to_cited }}</div>
                                         <div class="myplus">+</div>
                                     </div>
 
@@ -302,7 +309,7 @@
 
                                     <div class="powerpointslidecountingrowpage">
                                         <div class="myminus">-</div>
-                                        <div class="mycount">0</div>
+                                        <div class="mycount">{{ $order->powerpoint_slides }}</div>
                                         <div class="myplus">+</div>
                                     </div>
 
@@ -322,13 +329,13 @@
                                 </div>
                                 <div class="col">
                                     <div class="row deadlinerow">
-                                        <div class="col deadlinerowactive">
+                                        <div class="col  @if($order->deadline=="sixhours") deadlinerowactive @endif ">
                                             <label for="sixhours">6 Hours</label>
                                             <input type="radio" id="sixhours" class="d-none" value="sixhours"
                                                 name="deadline" checked />
                                         </div>
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="twelvehours") deadlinerowactive @endif">
                                             <label for="twelvehours">12 Hours</label>
                                             <input type="radio" id="twelvehours" value="twelvehours" class="d-none"
                                                 name="deadline" />
@@ -336,7 +343,7 @@
 
 
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="twentyfourhours") deadlinerowactive @endif">
                                             <label for="twentyfourhours">24 Hours</label>
                                             <input type="radio" id="twentyfourhours" value="twentyfourhours"
                                                 class="d-none" name="deadline" />
@@ -344,7 +351,7 @@
 
 
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="ortyeighthours") deadlinerowactive @endif">
                                             <label for="fortyeighthours">48 Hours</label>
                                             <input type="radio" id="fortyeighthours" value="fortyeighthours"
                                                 class="d-none" name="deadline" />
@@ -353,7 +360,7 @@
 
 
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="threedays") deadlinerowactive @endif">
                                             <label for="threedays">3 Days</label>
                                             <input type="radio" id="threedays" value="threedays" class="d-none"
                                                 name="deadline" />
@@ -366,14 +373,14 @@
 
 
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="fivedays") deadlinerowactive @endif">
                                             <label for="fivedays">5 Days</label>
                                             <input type="radio" id="fivedays" value="fivedays" class="d-none"
                                                 name="deadline" />
                                         </div>
 
 
-                                        <div class="col ">
+                                        <div class="col  @if($order->deadline=="sevendays") deadlinerowactive @endif">
                                             <label for="sevendays">7 Days</label>
                                             <input type="radio" id="sevendays" value="sevendays" class="d-none"
                                                 name="deadline" />
@@ -408,7 +415,7 @@
                                 </div>
                                 <div class="col">
                                     <p>We'll send you the order for review by</p>
-                                    <p>Mon Mar 13 2023 10:22:02 GMT+0500 (Pakistan Standard Time)</p>
+                                    <p>Mon Mar 13 2023 10:22:02 GMT+0500 (USA Standard Time)</p>
                                 </div>
                             </div>
 
@@ -484,204 +491,24 @@
 
 
                             <input type="hidden" name="userid" id="userid" value="" />
-                            <input type="hidden" name="totalamount" id="totalamount" value="" />
-                            @if(session()->has('loginuserid') || Auth::check())
+                            <input type="hidden" name="totalamount" id="totalamount" value="{{ $order->amount }}" />
+                          
                             <div class="py-4 checkoutbuttonhide">
                                 <button class="btn btn-lg btn-info ">Checkout</button>
                             </div>
-                            @else
-                            <div class="py-4 checkoutbuttonhide">
-                                <button class="btn btn-lg btn-info hide">Checkout</button>
-                            </div>
+                          
 
-                            @endif
+                            
 
                         </form>
 
 
                         <!----------------------- Acount Section Start From Here --------------------- -->
-                        @if(session()->has('loginuserid'))
-
-                        @else
+                       
 
 
 
-@if(!Auth::check())
-
-                        <div class="bottonaccountdiv">
-
-
-
-
-                            <div class="accountdivpointmain position-relative">
-                                <div class="accoutdivpoint">
-                                    2.Account
-                                </div>
-                            </div>
-
-
-
-                            <div class="acounttabdiv">
-                                <div class="paymentloginbutton new active">New Customer</div>
-                                <div class="paymentloginbutton old">Returning Customer</div>
-                            </div>
-
-
-                            <div class="paymentloginform new py-3 active">
-
-                                <form method="post" id="buynowsignupform">
-
-                                    @csrf
-
-                                    <!-- Email  -->
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="email" placeholder="Your Email Address" class="form-control"
-                                                name="email" id="emailsignup" />
-                                        </div>
-                                    </div>
-
-
-                                    <!-- Name  -->
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Name</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="text" class="form-control" name="name" id="namesignup" />
-
-                                        </div>
-                                    </div>
-
-
-
-                                    <!-- Password  -->
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Password</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="password" class="form-control" name="password"
-                                                id="signuppassword" />
-                                        </div>
-                                    </div>
-
-
-
-                                    <!-- Phone  -->
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Phone</label>
-                                        </div>
-                                        <div class="col">
-                                            <div class="row">
-                                                <div class="col-3 px-0">
-                                                    <select name="phonecode" class="form-control" id="signupphonecode">
-                                                        <option value="+1">USA +1</option>
-                                                        <option value="+92">Pak</option>
-                                                        <option value="+91">Ind</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col px-0">
-                                                    <input type="number" class="form-control" name="phone"
-                                                        id="signupnumber" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-
-                                    <!-- checkbox  -->
-                                    <div class="row py-1">
-                                        <div class="col-3">
-
-                                        </div>
-                                        <div class="col ">
-                                            <div class="row">
-                                                <div class="col-1"><input type="checkbox" name="agree" value="agree1"
-                                                        class="me-2" /></div>
-                                                <div class="col"> <label>I agree to receive discount coupons, exclusive
-                                                        offers, and the latest news by email, SMS, phone, and other
-                                                        electronic means</label></div>
-                                            </div>
-
-
-
-                                        </div>
-                                    </div>
-
-                                    <div class="row py-1">
-                                        <div class="col-3">
-
-                                        </div>
-                                        <div class="col">
-
-
-                                            <div class="row">
-                                                <div class="col-1"> <input type="checkbox" value="agree2"
-                                                        name="agree2" /></div>
-                                                <div class="col"> <label>I agree to the Terms and conditions</label>
-                                                </div>
-                                            </div>
-
-
-
-
-
-                                        </div>
-                                    </div>
-
-
-                                    <button class="btn btn-info" id="buynowsignupformbutton">Sign Up</button>
-
-
-
-                                </form>
-
-
-
-
-                            </div>
-
-
-                            <div class="paymentloginform old py-3">
-                                <form method="post">
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Email</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="email" class="form-control" placeholder="Email"
-                                                name="olduseremail" id="signinemail" />
-                                        </div>
-                                    </div>
-
-                                    <div class="row py-3">
-                                        <div class="col-3">
-                                            <label>Password</label>
-                                        </div>
-                                        <div class="col">
-                                            <input type="password" class="form-control" placeholder="Password"
-                                                name="olduserpassword" id="signinpassword" />
-                                        </div>
-                                    </div>
-
-                                    <button class="btn btn-seconday" id="btnsignin">LogIn</button>
-
-                                </form>
-
-                            </div>
-
-                        </div>
-
-
-
-                        @endif
-                        @endif
+                       
 
 
                     </div>
@@ -698,7 +525,7 @@
         <!-- Right  -->
 
 
-        <div class="rightboxfixed">
+        <div class="rightboxfixed" style="max-width:200px">
             <div class="orderbox">
                 <h4 style="color:#4A6675">Writer's Choice</h4>
                 <div style="color:#4A6675" class="getacademic mb-1">
@@ -713,12 +540,12 @@
 
                 <div class="row">
                     <div class="col">
-                        <span class="pagesideboxfixed">1</span> pages *
+                        <span class="pagesideboxfixed">{{ $order->number_of_pages }}</span> pages *
                         <span class="singlepricesideboxfixed"> 22.31</span>
                     </div>
                     <div class="col">
 
-                        <span class="getcurrencydiv">USD</span> <span class="totalchangedsidebarfixed">22.31</span>
+                        <span class="getcurrencydiv">USD</span> <span class="totalchangedsidebarfixed">{{22.31* $order->number_of_pages }}</span>
                     </div>
                 </div>
 
@@ -747,7 +574,7 @@
                     </div>
                     <div class="col">
 
-                        <span style="color:#28a745!important;font-weight:500" class="getcurrencydiv">USD</span> <span  style="color:#28a745!important;font-weight:500" class="totalchangedsidebarfixed">22.31</span>
+                        <span style="color:#28a745!important;font-weight:500" class="getcurrencydiv">USD</span> <span  style="color:#28a745!important;font-weight:500" class="totalchangedsidebarfixed">{{ $order->amount }}</span>
                     </div>
                 </div>
 
@@ -769,11 +596,15 @@
 
 
 
+    
     </div>
     </div>
-    </div>
+</div>
+</div>
+</div>
 
-
+   
+  @endforeach
 
 
 
