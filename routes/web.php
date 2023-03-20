@@ -55,8 +55,31 @@ Route::post('/user/login',[AdminController::class,'Userlogindirection'])->name('
 Route::get('/admin',[AdminController::class,'AdminLogin'])->name('adminlogin');
 Route::post('/admin/dashboard',[AdminController::class,'Logindirection'])->name('logindirection');
 Route::get('/admin/dashboard',[AdminController::class,'AdminDashboardRedirect'])->name('adminRedirect');
+Route::get('/adminhome',[AdminController::class,'Adminhome'])->name('adminhome');
+Route::get('/admin/allorders',[AdminController::class,'Allorders'])->name('allorders');
+Route::get('/paymentcompletedorder',[AdminController::class,'Paymentcompletedorder'])->name('paymentcompletedorder');
+Route::get('/allvalues',[AdminController::class,'Allformulavalues'])->name('allformulavalues');
+Route::get('/adminmessages',[AdminController::class,'Adminmessages'])->name('adminmessages');
+Route::get('/bids',[AdminController::class,'Bids'])->name('bids');
+Route::get('/users',[AdminController::class,'Users'])->name('users');
+Route::get('/opentypeofpaperform',[AdminController::class,'Opentypeofpaperform'])->name('opentypeofpaperform');
+Route::post('/typeofpaper',[AdminController::class,'Typeofpaper'])->name('typeofpaper');
+Route::get('/deletetypeofpaper/{id}',[AdminController::class,'Deletetypeofpaper'])->name('deletetypeofpaper');
+Route::get('/opendisciplineform',[AdminController::class,'Opendisciplineform'])->name('opendisciplineform');
+Route::post('/discipline',[AdminController::class,'Discipline'])->name('discipline');
+Route::get('/deletediscipline/{id}',[AdminController::class,'Deletediscipline'])->name('deletediscipline');
+Route::get('/onsitemessage',[AdminController::class,'Onsitemessage'])->name('onsitemessage');
 
 
+// All Values 
+Route::post('/allvalues',[AdminController::class,'Allvalues'])->name('allvalues');
+Route::get('/deletediscipline/{id}',[AdminController::class,'Deletediscipline'])->name('deletediscipline');
+
+// sms 
+Route::get('/adminsms',[AdminController::class,'Adminsms'])->name('adminsms');
+Route::post('/sendsmsclient',[AdminController::class,'Sendsmsclient'])->name('sendsmsclient');
+Route::get('/adminemail',[AdminController::class,'Adminemail'])->name('adminemail');
+Route::get('/payments',[AdminController::class,'Payments'])->name('payments');
 
 
 // --------------------Send Message -----------------------
